@@ -6,9 +6,8 @@ padding: 0;
 
 body {
 font-family: 'Montserrat', sans-serif;
-/*add the background image here
-/* background:url('https://unsplash.com/photos/LtWFFVi1RXQ'); */
-background-color: bisque;
+background-image: url(./image/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg);
+background-color: rgb(172, 140, 100);
 background-repeat: no-repeat;
 background-size: cover;
 overflow: hidden;
@@ -44,8 +43,13 @@ height: 100vh;
 }
 
 .place-container {
-    text-align: end;
-    margin-top: -350px;
+    position:fixed;
+    right: 70px;
+    top: 20px;
+    width: 100px;
+
+    /* text-align: end;
+    margin-top: -350px; */
 }
 
 .place-container .time-zone {
@@ -54,14 +58,16 @@ height: 100vh;
 }
 
 .place-container .country {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .current-info .others {
     display: flex;
     flex-direction: column;
-    
 }
 
 .current-info .weather-item {
@@ -72,6 +78,8 @@ height: 100vh;
     border: 1px solid white;
     display: flex;
     justify-content: space-between;
+
+    
 }
 
 .future-forecast {
@@ -84,6 +92,8 @@ height: 100vh;
     width: 100%;
     align-items: center;
     justify-content: center;
+
+    
 }
 
 .future-forecast .today {
@@ -114,6 +124,21 @@ height: 100vh;
     align-items: center;
     justify-content: center;
     margin: 0 10 px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    padding: 15px;
 }
 
+.weather-forecast .weather-forecast-item .day {
+    padding: 5px 15px;
+    background: #b4b4bd;
+    border-radius: 50px;
+    text-align: center;
+}
+
+.weather-forecast .weather-forecast-item .temp {
+    font-weight: 100;
+}
  
+
+
