@@ -6,7 +6,8 @@ padding: 0;
 
 
 
-/*body {
+
+body {
 font-family: 'Montserrat', sans-serif;
 background-image: url(./image/lukasz-lada-LtWFFVi1RXQ-unsplash.jpg);
 background-color: rgb(172, 140, 100);
@@ -15,6 +16,7 @@ background-size: cover;
 overflow: hidden;
 height: 100vh;
 }
+
 
 
 .container {
@@ -43,6 +45,20 @@ height: 100vh;
 
 .date-container .date {
     font-size: 30px;
+}
+
+.button {
+color:aqua;
+}
+
+.weather-city {
+    background: rgba(24,24,27, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+    margin: 1px 0;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-between;
 }
 
 .place-container {
@@ -85,6 +101,7 @@ height: 100vh;
     
 }
 
+
 .future-forecast {
     background: rgba(24,24,27,0.8);
     padding: 25px;
@@ -103,6 +120,7 @@ height: 100vh;
     display: flex;
     align-items:center;
     justify-content: center;
+    padding: 30px;
 }
 
 .future-forecast .today .day {
