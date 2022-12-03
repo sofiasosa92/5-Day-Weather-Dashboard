@@ -11,21 +11,72 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Averia+Sans+Libre&family=Gemunu+Libre&family=Libre+Baskerville:ital@1&family=Montserrat:wght@200&family=Pacifico&family=Raleway:wght@100&display=swap"
         rel="stylesheet">
-
-    <title>Sosa's Weather App</title>
+        <title>Sosa's Weather App</title>
 </head>
+
+<header>
+    <h1>Welcome to Sosa's 5 day weather forecast</h1>
+</header>
+
+<main>
+    <section>
+<!--search cointainer-->
+<div id="search-container">
+    <aside>
+      <div id="selector" class="selector-hidden"></div>
+      <form id="search">
+        <input type="text">
+        <button type="submit" id="search-btn">Search</button>
+      </form>
+       <button id="clear-history">Clear search history</button>
+    </aside>
+    <div id="previous-searches">  
+    </div>
+</div>
+
+</section>
+
+<section id="weathey-display">
+    <div id="main-card">
+        <div id="todays-day"><span id="city-name">Dallas</span>
+        <span id="todays-date"></span></div>
+        <hr>
+        <div id="todays-info">
+            <div><img src="" id="today-img"></div>
+            <span id="today-max"></span>
+            <span id="today-min"></span>
+            <span id="today-wind"></span>
+            <span id="today-humidity"></span>
+        </div>
+    </div>
+    <div class="five-day">
+        5 day forecast 
+    </div>
+    <div id="container-daily-cards">
+    <div class="daily-card" data-fivedays="0">
+        <p class="day"></p>
+        <hr>
+        <img src="" class="weather-img">
+        <p class="max"></p>
+        <p class="min"></p>
+        <p class="wind"></p>
+        <p class="humidity"></p>
+    </div>
+    
+    </div>
+
+</section>
+
+
+
+</main>
+
+
+<!-- 
 <body>
 
-    <div class="container">
-        <div class="current-info">
 
-            <div class="date-container">
-                <div class="time" id="time">
-                    12:30 <span id="am-pm">PM</span>
-                </div>
-                <div class="date" id="date">
-                    Sunday, November 27
-                </div>
+                
                 <div class="others" id="current-weather-items"></div>
                 <div class="weather-item">
                     <div>humidity</div>
@@ -42,7 +93,8 @@
 
             </div>
         </div>
-        
+    
+
         <div class="place-container">
             <div class="time-zone" id="time-zone">Eastern Standard</div>
             <div id="country" class="country">US</div>
@@ -94,6 +146,6 @@
         </div>
     </div>
     <script src="script.js"></script>
-</body>
+</body> -->
 
 </html>
