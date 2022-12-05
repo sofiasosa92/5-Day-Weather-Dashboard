@@ -5,109 +5,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sosa's 5 Day Weather Forecast</title>
     <link rel="stylesheet" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Averia+Sans+Libre&family=Gemunu+Libre&family=Libre+Baskerville:ital@1&family=Montserrat:wght@200&family=Pacifico&family=Raleway:wght@100&display=swap"
         rel="stylesheet">
-
-    <title>Sosa's Weather App</title>
 </head>
 
+<body onload="DefaultScreen()">
+    <center>
+        <h1 id="para1">5 Day Weather Forecast</h1>
+        <p id="inputContainer">City: <input type="text" id="cityInput"></p>
+        <button onclick="GetInfo()">Search</button>
+        <h2 id="cityName">Dallas</h2>
+    </center>
 
-<body>
-
-    <div class="container">
-        <div class="current-info">
-            <div class="date-container">
-                <div class="time" id="time">
-                    12:30 <span id="am-pm">PM</span>
-                </div>
-                <div class="date" id="date">
-                    Sunday, November 27
-                </div>
-
-
-                <!--current city-->
-                <div class="weather" id="current-weather"></div>
-                <div class="weather-city">
-                    <div>Dallas</div>
-                    <div>Temperature</div>
-                </div>
-                <div class="others" id="current-weather-items"></div>
-                <div class="weather-item">
-                    <div>humidity</div>
-                    <div>95.2%</div>
-                </div>
-                <div class="weather-item">
-                    <div>Pressure</div>
-                    <div>121</div>
-                </div>
-                <div class="weather-item">
-                    <div>Wind Speed</div>
-                    <div>222</div>
-                </div>
+    <!--5 days weather -->
+    <div id="weatherContainer">
+        <div id="iconsContainer">
+            <div class="icons">
+                <p class="weather" id="day1"></p>
+                <div class="image"><img src="" class="imgClass" id="img1"
+                        alt=""></div>
+                <p class="minValues" id="day1min">Loading</p>
+                <p class="maxValues" id="day1max">Loading</p>
             </div>
-        </div>
-        <div class="place-container">
-            <div class="time-zone" id="time-zone">Eastern Standard</div>
-            <div id="country" class="country">US</div>
+
+            <div class="icons">
+                <p class="weather" id="day2"></p>
+                <div class="image"><img src="" class="imgClass" id="img2"
+                        alt=""></div>
+                <p class="minValues" id="day2min">Loading</p>
+                <p class="maxValues" id="day2max">Loading</p>
+            </div>
+
+            <div class="icons">
+                <p class="weather" id="day3"></p>
+                <div class="image"><img src="" class="imgClass" id="img3"
+                        alt=""></div>
+                <p class="minValues" id="day3min">Loading</p>
+                <p class="maxValues" id="day3max">Loading</p>
+            </div>
+
+            <div class="icons">
+                <p class="weather" id="day4"></p>
+                <div class="image"><img src="" class="imgClass" id="img4"
+                        alt=""></div>
+                <p class="minValues" id="day4min">Loading</p>
+                <p class="maxValues" id="day4max">Loading</p>
+            </div>
+
+            <div class="icons">
+                <p class="weather" id="day5"></p>
+                <div class="image"><img src="" class="imgClass" id="img5"
+                        alt=""></div>
+                <p class="minValues" id="day5min">Loading</p>
+                <p class="maxValues" id="day5max">Loading</p>
+            </div>
+
         </div>
     </div>
-    </div>
 
-    <!--Button search-->
-    <form id="form">
-        <input type="search" id="city" name="button" placeholder="City">
-        <button>Search</button>
-    </form> 
-    
-    <!--future five day forecast -->
-    <div class="future-forecast">
-        <div class="today" id="current-temp">
-            <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-            <div class="other">
-                <div class="day">Monday</div>
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
 
-        </div>
-        <div class="weather-forecast" id="weather-forecast">
-            <div class="weather-forecast-item">
-                <div class="day">Tue</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Wed</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Thur</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Fri</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-            <div class="weather-forecast-item">
-                <div class="day">Sat</div>
-                <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="weather icon" class="w-icon">
-                <div class="temp">Night - 25.6&#176; C</div>
-                <div class="temp">Day - 35.6&#176; C</div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+
+
+
+
+
+
+
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

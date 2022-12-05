@@ -1,68 +1,50 @@
-const timeEl = document.getElementById('time');
-const dateEl = document.getElementById('date');
-const currentWeatherItemsEl = document.getElementById('current-weather-items');
-const timezone = document.getElementById('time-zone');
-const countryEl = document.getElementById('country');
-const weatherForecastEl = document.getElementById('weather-forecast');
-const currentTempEl = document.getElementById('current-temp');
+function GetInfo(){
+    const newName = document.getElementById("cityInput");
+    const cityName = document.getElementById("cityName");
+    cityName.innerHTML = "--"+newName.value+"--"
 
 
-const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+//wont load resource 
+fetch("api.openweathermap.org/data/2.5/forecast?q=+newName.value+&appid=4900f1d128bd172382581da33056b932")
 
-//API key
-const API ='1f43674c9358ffdf830ce1265be2b12c';
-
-setInterval(() => {
-    const time = new Date();
-    const month =  time.getMonth();
-    const date = time.getDate();
-    const day = time.getDay();
-    const hour = time.getHours();
-    const hoursIn12HrFormat = hour >= 13 ? hour %12: hour 
-    const minutes = time.getMinutes();
-    const ampm = hour >=12 ? 'PM' : 'AM'
-
-    timeEl.innerHTML = hoursIn12HrFormat + ':' + minutes+ '' + `<span id="am-pm">${ampm}</span>`
-
-    dateEl.innerHTML = days[day] + ', ' + date+ ' ' + months[month]
+.then(response => response.json())
+.then(data =>{
+    for(i=0; i<5; i++){
+        document.getElementById("day" +(i+1)+"Min").innerHTML = "Min:" +Number(data.list[i].main.temp_min -284.22).toFixed(1)+"°";
+    }
+    for(i=0; i<5; i++){
+        document.getElementById("day" +(i+1)+"Max").innerHTML = "Max:" +Number(data.list[i].main.temp_max -286.26).toFixed(1)+"°";
+    }
     
-}, 1000); //every 1 second
+    //my icons wont load either
+    for(i=0; i<5; i++){
+        document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
+    }
 
-getWeatherData()
-function getWeatherData () {
-    navigator.geolocation.getCurrentPosition((success) => {
-        console.log(sucess);
+})
 
-        let {latitude, longitude } = success.coords;
-//api link
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&exclude=hourly,minutely&units=metric&appid=${API_KEY}`).then(res => res.json()).then(data => {
-            console.log(data)
-            showWeatherData(data);
-        })
-    })
+.catch(err => alert("Something Went Wrong"))
 }
 
-function showWeatherData (data){
-let{ humidity, pressure, sunrise, sunset, wind_speed} = data.current;
-
-currentWeatherItemsEl.innerHTML = 
-`<div class="weather-item">
-<div>Humidity</div>
-<div>${humidity}%</div>
-</div>
-<div class="weather-item">
-<div>Pressure</div>
-<div>${pressure}</div>
-</div>
-<div class="weather-item">
-<div>Wind Speed</div>
-<div>${wind_speed}</div>
-</div>
-<div class="weather-item">
-<div>Wind Speed</div>
-<div>${wind_speed}</div>
-</div>
-`;
-
+function DefaultScreen(){
+    document.getElementById("cityInput").defaultValue ="Dallas";
+    GetInfo();
 }
+
+const d =new Date();
+const weekday =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+function CheckDay(day){
+    if(day +d.getDay() > 6){
+        return day +d.getDay()-7;
+    }
+    else{
+        return day +d.getDay();
+    }
+}
+
+for(i=0; i<5; i++){
+    document.getElementById("day"+(i+1)).innerHTML = weekday[CheckDay(i)];
+}
+
+
