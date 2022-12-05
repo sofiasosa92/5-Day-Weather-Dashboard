@@ -5,7 +5,11 @@ function GetInfo(){
 
 
 //wont load resource 
-fetch("api.openweathermap.org/data/2.5/forecast?q=+newName.value+&appid=4900f1d128bd172382581da33056b932")
+// fetch("api.openweathermap.org/data/2.5/forecast?q=+newName.value+&appid=4900f1d128bd172382581da33056b932")
+
+fetch("http://api.openweathermap.org/geo/1.0/direct?q="+dallas+"&limit={5}&appid=4900f1d128bd172382581da33056b932")
+
+
 
 .then(response => response.json())
 .then(data =>{
@@ -15,7 +19,7 @@ fetch("api.openweathermap.org/data/2.5/forecast?q=+newName.value+&appid=4900f1d1
     for(i=0; i<5; i++){
         document.getElementById("day" +(i+1)+"Max").innerHTML = "Max:" +Number(data.list[i].main.temp_max -286.26).toFixed(1)+"°";
     }
-    
+
     //my icons wont load either
     for(i=0; i<5; i++){
         document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
