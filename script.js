@@ -1,18 +1,22 @@
+
+
 function GetInfo(){
     const newName = document.getElementById("cityInput");
     const cityName = document.getElementById("cityName");
     cityName.innerHTML = "--"+newName.value+"--"
 
-
-//wont load resource 
-// fetch("api.openweathermap.org/data/2.5/forecast?q=+newName.value+&appid=4900f1d128bd172382581da33056b932")
-
-fetch("http://api.openweathermap.org/geo/1.0/direct?q="+dallas+"&limit={5}&appid=4900f1d128bd172382581da33056b932")
+var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${newName.value}&appid=4900f1d128bd172382581da33056b932`
 
 
+// function coordinates(userInput){
 
+// }
+fetch(apiUrl)
 .then(response => response.json())
 .then(data =>{
+    console.log(data);
+
+
     for(i=0; i<5; i++){
         document.getElementById("day" +(i+1)+"Min").innerHTML = "Min:" +Number(data.list[i].main.temp_min -284.22).toFixed(1)+"°";
     }
@@ -29,6 +33,8 @@ fetch("http://api.openweathermap.org/geo/1.0/direct?q="+dallas+"&limit={5}&appid
 
 .catch(err => alert("Something Went Wrong"))
 }
+console.log(GetInfo);
+
 
 function DefaultScreen(){
     document.getElementById("cityInput").defaultValue ="Dallas";
