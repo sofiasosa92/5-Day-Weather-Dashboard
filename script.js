@@ -25,6 +25,7 @@ function citySearch(event) {
 searchBtn.addEventListener("click", citySearch);
 // create function to get city and weather from api on city name searched
 // and pass in the variable created to hold search input
+
 function pullCityInfo(citySearched) {
     // set variable to hold the api for current weather, found on the api site
     let currentWeatherApi =
@@ -143,6 +144,8 @@ function getWeatherData(citySearched, lat, lon) {
     });
 }
 
+
+    
 // TODO: add icon to weather like with tempDisplay.textContent by digging into the api data.
 
 // TODO: create for loop to loop through the data to get your 5 day forecast, then append to page.
@@ -179,81 +182,5 @@ function getWeatherData(citySearched, lat, lon) {
 
 
 
-
-
-
-
-
-//old functions
-
-// var apiKey = "4900f1d128bd172382581da33056b932"
-
-
-// function GetInfo(){
-//     const newName = document.getElementById("cityInput");
-//     const cityName = document.getElementById("cityName");
-//     cityName.innerHTML = "--"+newName.value+"--"
-
-
-
-
-// // function coordinates(userInput){
-
-// // }
-// fetch(apiUrl)
-// .then(response => response.json())
-// .then(data =>{
-//     console.log(data);
-
-
-//     for(i=0; i<5; i++){
-//         document.getElementById("day" +(i+1)+"Min").innerHTML = "Min:" +Number(data.list[i].main.temp_min -284.22).toFixed(1)+"°";
-//     }
-//     for(i=0; i<5; i++){
-//         document.getElementById("day" +(i+1)+"Max").innerHTML = "Max:" +Number(data.list[i].main.temp_max -286.26).toFixed(1)+"°";
-//     }
-
-//     //my icons wont load either
-//     for(i=0; i<5; i++){
-//         document.getElementById("img" +(i+1)).src ="http://openweathermap.org/img/wn/" + data.list[i].weather[0].icon+".png";
-//     }
-
-// })
-
-// .catch(err => alert("Something Went Wrong"))
-// }
-// console.log(GetInfo);
-
-// //
-// function pullCity() {
-//     var apiUrl = "https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid=" + apiKey;
-//     fetch(apiUrl)
-//     .then(response => response.json())
-//     .then(data =>{ 
-//         var lat = data
-//         console.log(apiUrl);
-// }
-
-
-// function DefaultScreen(){
-//     document.getElementById("cityInput").defaultValue ="Dallas";
-//     GetInfo();
-// }
-
-// const d =new Date();
-// const weekday =["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-// function CheckDay(day){
-//     if(day +d.getDay() > 6){
-//         return day +d.getDay()-7;
-//     }
-//     else{
-//         return day +d.getDay();
-//     }
-// }
-
-// for(i=0; i<5; i++){
-//     document.getElementById("day"+(i+1)).innerHTML = weekday[CheckDay(i)];
-// }
 
 
