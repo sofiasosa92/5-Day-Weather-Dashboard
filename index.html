@@ -2,6 +2,103 @@
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sosa's 5 Day Weather Forecast</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Averia+Sans+Libre&family=Gemunu+Libre&family=Libre+Baskerville:ital@1&family=Montserrat:wght@200&family=Pacifico&family=Raleway:wght@100&display=swap"
+        rel="stylesheet" />
+</head>
+
+<!-- <body onload="DefaultScreen()"> -->
+
+<body>
+    <div class="backgroundImage">
+        <h1 id="para1">5 Day Weather Forecast</h1>
+        <p id="inputContainer">City: <input type="text" id="cityInput" /></p>
+        <!-- <button onclick="GetInfo()">Search</button> -->
+        <button id="searchBtn">Search</button>
+
+
+        <!-- <h2 id="cityName"></h2> -->
+        <p id="currentDate"></p>
+        <p id="tempDisplay"></p>
+        <p id="windDisplay"></p>
+        <p id="humidityDisplay"></p>
+
+        <div id="weatherContainer">
+            <div id="iconsContainer">
+                <div class="icons">
+                    <p class="weather" id="day1">day</p>
+                    <div class="image">
+                        <img src="" class="imgClass" id="img1" alt="" />
+                        <p id="day1temp">Temp</p>
+                        <p id="day1wind">Wind</p>
+                        <p id="day1hum">Humidity</p>
+                    </div>
+                
+                </div>
+
+                <div class="icons">
+                    <p class="weather" id="day2">day</p>
+                    <div class="image">
+                        <img src="" class="imgClass" id="img2" alt="" />
+                        <p id="day2temp">Temp</p>
+                        <p id="day2wind">Wind</p>
+                        <p id="day2hum">Humidity</p>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <p class="weather" id="day3">day</p>
+                    <div class="image">
+                        <img src="" class="imgClass" id="img3" alt="" />
+                        <p id="day3temp">Temp</p>
+                        <p id="day3wind">Wind</p>
+                        <p id="day3hum">Humidity</p>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <p class="weather" id="day4">day</p>
+                    <div class="image">
+                        <img src="" class="imgClass" id="img4" alt="" />
+                        <p id="day4temp">Temp</p>
+                        <p id="day4wind">Wind</p>
+                        <p id="day4hum">Humidity</p>
+                    </div>
+                </div>
+
+                <div class="icons">
+                    <p class="weather" id="day5">day</p>
+                    <div class="image">
+                        <img src="" class="imgClass" id="img5" alt="" />
+                        <p id="day5temp">Temp</p>
+                        <p id="day5wind">Wind</p>
+                        <p id="day5hum">Humidity</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./script.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -62,4 +159,4 @@
     <script src="./script.js"></script>
 </body>
 
-</html> 
+</html>  -->
