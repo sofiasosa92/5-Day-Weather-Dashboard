@@ -144,6 +144,20 @@ function getWeatherData(citySearched, lat, lon) {
     });
 }
 
+//search history function
+function showHistory(){
+    searchHistory.innerHTML = "";
+    for (var i = searchHistory.length -1; i >= 0; i++){
+        var historyBtn = document.createElement("button");
+        historyBtn.setAttribute("type", "button");
+        historyBtn.setAttribute("searchData", searchHistory[i])
+        historyBtn.textContent = searchHistory[i];
+        searchHistory.append(historyBtn);
+    }
+}
+
+//function to updating the local storage and append search terms
+
 
     
 // TODO: add icon to weather like with tempDisplay.textContent by digging into the api data.
